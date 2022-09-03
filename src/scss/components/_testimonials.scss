@@ -28,6 +28,7 @@ background-color: #F4F5F7;
 }
 
 .testimonials-item {
+  overflow: hidden;
   &__image {
     overflow: hidden;
     margin-bottom: 24px;
