@@ -1,9 +1,15 @@
 .testimonials {
-padding: 95px 0;
+padding-top: 97px;
+margin-bottom: -30px;
 background-color: #F4F5F7;
 
   &__content {
     max-width: 612px;
+  }
+
+  &__image {
+
+    margin-bottom: -60px;
   }
 
   &__title {
@@ -55,6 +61,7 @@ background-color: #F4F5F7;
   &__author {
     margin-bottom: 4px;
     display: block;
+    padding-right: 110px;
     font-weight: 700;
     font-size: 16px;
     line-height: 160%;
@@ -63,6 +70,7 @@ background-color: #F4F5F7;
 
   &__author-position {
     display: block;
+    padding-right: 110px;
     font-size: 14px;
     line-height: 150%;
     color: var(--color-storm);

@@ -69,7 +69,7 @@ if (portSlider) {
 
 const testimonialsSlider = new Swiper('.testimonials__items', {
   slidesPerView: 1,
-  spaceBetween: gap,
+  spaceBetween: 30,
   loop: true,
   navigation: {
     nextEl: '.testimonials__next',
