@@ -10,7 +10,7 @@
     content: "";
     position: absolute;
     left: -9px;
-    top: -190px;
+    top: -195px;
     width: 570px;
     height: 1065px;
     background-image: url("../img/facts-bg.png");
@@ -22,21 +22,44 @@
   &__list {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 48px;
     margin: 0 auto;
     max-width: 736px;
+    gap: 48px;
+
+    @include minitablet {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include mobile {
+      display: block;
+    }
+  }
+
+  &__item {
+    @include mobile {
+      &:not(:last-child) {
+        margin-bottom: 30px;
+      }
+    }
   }
 
   &__title {
-    margin-bottom: 60px;
+    margin-bottom: 62px;
+
+    @include mobile {
+      margin-bottom: 25px;
+    }
+  }
+
+  @include mobile {
+    padding: 40px 0;
   }
 }
 
 .facts-element {
   &__circle {
-    --progress-stroke: #000000;
+    --progress-stroke: #000;
     --progress-bg-opacity: 0.3;
-
 
     position: relative;
     margin-bottom: 20px;
@@ -63,23 +86,21 @@
     }
 
     &--one-color {
-      --progress-stroke: #F89828;
-
+      --progress-stroke: #f89828;
     }
 
     &--two-color {
-      --progress-stroke: #F52F6E;
+      --progress-stroke: #f52f6e;
     }
 
     &--three-color {
-      --progress-stroke: #5A87FC;
+      --progress-stroke: #5a87fc;
     }
 
     &--four-color {
-      --progress-stroke: #03CEA4;
+      --progress-stroke: #03cea4;
     }
   }
-
 
   &__value {
     position: absolute;
@@ -87,15 +108,22 @@
     top: 50%;
     font-weight: 700;
     font-size: 32px;
+    line-height: 150%;
     color: var(--color-ebony);
     transform: translate(-50%, -50%);
   }
 
-  &__text{
+  &__text {
     display: block;
-    text-align: center;
     font-size: 14px;
     line-height: 150%;
+    text-align: center;
     color: var(--color-ebony);
+  }
+
+  @include minitablet {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }

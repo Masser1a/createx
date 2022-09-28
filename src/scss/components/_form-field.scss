@@ -3,15 +3,13 @@
 
   &__caption {
     margin-bottom: 7px;
-    font-weight: 400;
     font-size: 14px;
     line-height: 150%;
     color: var(--color-gray);
   }
 
   &__input {
-
-    border: 1px solid #D7DADD;
+    border: 1px solid #d7dadd;
     border-radius: 4px;
     padding-left: 15px;
     width: 260px;
@@ -20,7 +18,12 @@
     line-height: 150%;
 
     &::placeholder {
-      color: #9A9CA5;
+      color: #9a9ca5;
+    }
+
+    &:focus {
+      outline: 2px solid var(--color-primary);
+      outline-offset: 2px;
     }
 
     &--big {
@@ -40,7 +43,8 @@
 
   &--gray {
     width: 100%;
-    .form-field__input{
+
+    .form-field__input {
       width: 100%;
       background-color: var(--color-athens);
     }

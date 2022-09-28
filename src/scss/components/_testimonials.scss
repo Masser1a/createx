@@ -1,15 +1,37 @@
 .testimonials {
-padding-top: 97px;
-margin-bottom: -30px;
-background-color: var(--color-athens);
+  padding-top: 97px;
+  background-color: var(--color-athens);
 
   &__content {
     max-width: 612px;
+
+    @include tablet {
+      max-width: 450px;
+    }
+
+    @include mobile {
+      width: 100%;
+      max-width: none;
+    }
   }
 
   &__image {
-
+    position: relative;
+    z-index: 5;
     margin-bottom: -60px;
+
+    @include minidesk {
+      width: 380px;
+      object-fit: cover;
+    }
+
+    @include tablet {
+      width: 300px;
+    }
+
+    @include minitablet {
+      display: none;
+    }
   }
 
   &__title {
@@ -17,9 +39,9 @@ background-color: var(--color-athens);
   }
 
   &__items {
-      position: relative;
-      padding-bottom: 12px;
-    }
+    position: relative;
+    padding-bottom: 12px;
+  }
 
   &__slider-nav {
     position: absolute;
@@ -31,13 +53,17 @@ background-color: var(--color-athens);
     display: flex;
     justify-content: space-between;
   }
+
+  @include minitablet {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
 }
 
 .testimonials-item {
-  overflow: hidden;
   &__image {
     overflow: hidden;
-    margin-bottom: 24px;
+    margin-bottom: 25px;
     border-radius: 100%;
     width: 72px;
     height: 72px;
@@ -52,15 +78,15 @@ background-color: var(--color-athens);
 
   &__descr {
     margin: 0;
-    margin-bottom: 24px;
+    margin-bottom: 25px;
     font-size: 16px;
     line-height: 160%;
     color: var(--color-gray);
   }
 
   &__author {
-    margin-bottom: 4px;
     display: block;
+    margin-bottom: 4px;
     padding-right: 110px;
     font-weight: 700;
     font-size: 16px;

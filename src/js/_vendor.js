@@ -1,4 +1,9 @@
-import './vendor/focus-visible.js';
-import './vendor/focus-visible.js';
-import './vendor/graph-accordion.js';
+import './vendor/focus-visible';
+import './vendor/choices.min';
+import './components/accordions';
+import './vendor/swiper.min';
+import './vendor/smooth-scroll.min';
+import './components/modals';
+
+
 

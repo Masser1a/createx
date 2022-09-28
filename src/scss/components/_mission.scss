@@ -1,17 +1,30 @@
 .mission {
   background-color: var(--color-light);
 
-  &__list{
+  &__list {
     --mission-gap: 94px;
+
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     margin-bottom: 27px;
     gap: calc(var(--mission-gap) * 2);
+
+    @include tablet {
+      --mission-gap: 30px;
+    }
+
+    @include minitablet {
+      --mission-gap: 10px;
+    }
+
+    @include mobile {
+      display: block;
+    }
   }
 
   &__item {
     position: relative;
-    padding-top: 70px;
+    padding-top: 71px;
     text-align: center;
     background-position: top center;
     background-size: 48px 48px;
@@ -25,23 +38,29 @@
         top: 0;
         width: 1px;
         height: 100%;
-        background-image: url(../img/divider.svg);
+        background-image: url("../img/divider.svg");
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
       }
     }
 
-    &--quality{
+    &--quality {
       background-image: url("../img/quality.svg");
     }
 
-    &--safety{
+    &--safety {
       background-image: url("../img/safety.svg");
     }
 
-    &--comfort{
+    &--comfort {
       background-image: url("../img/comfort.svg");
+    }
+
+    @include mobile {
+      &:not(:last-child) {
+        margin-bottom: 30px;
+      }
     }
   }
 
@@ -56,7 +75,6 @@
 
   &__descr {
     margin: 0;
-    font-weight: 400;
     font-size: 16px;
     line-height: 160%;
     color: var(--color-storm);
@@ -68,8 +86,8 @@
   top: 92px;
   border-radius: 4px;
   padding: 48px 60px;
-  box-shadow: 0px 80px 80px -20px rgba(154, 156, 165, 0.08), 0px 30px 24px -10px rgba(154, 156, 165, 0.05), 0px 12px 10px -6px rgba(154, 156, 165, 0.04), 0px 4px 4px -4px rgba(30, 33, 44, 0.03);
-  background: var(--color-light);
+  box-shadow: var(--main-shadow);
+  background-color: var(--color-light);
 
   &__title {
     margin: 0;
@@ -84,6 +102,10 @@
   &__content {
     display: flex;
     align-items: flex-end;
+
+    @include mobile {
+      display: block;
+    }
   }
 
   &__field {
@@ -92,5 +114,10 @@
 
   &__btn {
     padding: 11px 29px;
+  }
+
+  @include mobile {
+    top: initial;
+    padding: 10px 15px;
   }
 }

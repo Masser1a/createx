@@ -14,8 +14,8 @@
   &-decorate-2 {
     position: absolute;
     right: -8px;
-    margin-top: -134px;
     top: 50%;
+    margin-top: -134px;
     transform: translateY(-50%);
   }
 
@@ -25,10 +25,7 @@
   }
 
   &__item {
-    display: grid;
     align-items: center;
-    grid-template-columns: repeat(12, 1fr);
-    gap: var(--grid-gap);
 
     &:not(:last-child) {
       margin-bottom: 118px;
@@ -38,6 +35,10 @@
       .services__info {
         order: -1;
         padding-left: 0;
+
+        @include mobile {
+          order: initial;
+        }
       }
 
       .services__image {
@@ -68,7 +69,6 @@
   &__descr {
     margin: 0;
     margin-bottom: 50px;
-    font-weight: 400;
     font-size: 16px;
     line-height: 160%;
     color: var(--color-storm);
@@ -76,5 +76,6 @@
 
   &__link {
     padding: 11px 27px;
+    letter-spacing: normal;
   }
 }

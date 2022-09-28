@@ -7,26 +7,42 @@
   background-repeat: no-repeat;
 
   &__list {
-    margin-bottom: 85px;
+    margin-bottom: 80px;
+  }
+
+  @include mobile {
+    padding-top: 40px;
+    padding-bottom: 40px;
   }
 }
 
 .services-list {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: var(--grid-gap);
+  &__item {
+    grid-column: 3 span;
 
+    @include tablet {
+      grid-column: 6 span;
+    }
+
+    @include mobile {
+      grid-column: 4 span;
+    }
+  }
+
+  @include mobile {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 .services-item {
   position: relative;
   display: block;
-  border: 1px solid #E5E8ED;
+  border: 1px solid #e5e8ed;
   border-radius: 4px;
   padding: 0 10px;
   padding-top: 87px;
   padding-bottom: 90px;
-  box-shadow: 0px 80px 80px -20px rgba(154, 156, 165, 0.08), 0px 30px 24px -10px rgba(154, 156, 165, 0.05), 0px 12px 10px -6px rgba(154, 156, 165, 0.04), 0px 4px 4px -4px rgba(30, 33, 44, 0.03);
+  box-shadow: var(--main-shadow);
   background: var(--color-light);
 
   &::before {
@@ -55,13 +71,19 @@
     bottom: 0;
     z-index: 5;
     border-radius: inherit;
-    background-color: rgba(#1E212C, 0.6);
+    background-color: rgba(#1e212c, 0.6);
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
   }
 
+  &:focus {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+
   &__content {
     @include flex-column-center;
+
     position: relative;
     z-index: 10;
   }
@@ -72,7 +94,7 @@
     height: 52px;
     fill: var(--color-primary);
     object-fit: cover;
-    transition: fill 0.3s;
+    transition: fill 0.3s ease-in-out;
   }
 
   &__title {
@@ -82,16 +104,21 @@
     line-height: 150%;
     text-align: center;
     color: var(--color-ebony);
+    transition: color 0.3s ease-in-out;
+
+    @include minidesk {
+      font-size: 18px;
+    }
   }
 
   &--construct {
     &::before {
-      background-image: url(../img/services-1.jpg);
+      background-image: url("../img/services-1.jpg");
     }
   }
 
   &:hover {
-    &::before{
+    &::before {
       opacity: 1;
     }
 
